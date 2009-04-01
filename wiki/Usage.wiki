@@ -25,3 +25,17 @@ COMPILER_FORMATS = {
 }}}
 
 will use HSS to compile `*`.hss files, and Sass to compile `*`.sass files. Other compilers will use different extensions, just add the extension the compiler uses with the path to the compiler like in the above example.
+
+= Specifying Options =
+Most CSS compilers have optional arguments. Since django-css just does a command line call to the CSS compiler, you can just add the options to the path string. For example:
+{{{
+COMPILER_FORMATS = {
+    '.hss' : '/home/dziegler/project/hss',
+}
+}}}
+would be a normal call to the HSS compiler. HSS has the optional argument {{{-output <dir>}}} which lets you output the corresponding CSS file to a different directory. If I had the file format.hss and wanted to output the CSS file to project/output/format.css then I would do:
+{{{
+COMPILER_FORMATS = {
+    '.hss' : '/home/dziegler/project/hss -output project/output/',
+}
+}}}
