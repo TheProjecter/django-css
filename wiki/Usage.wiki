@@ -4,7 +4,7 @@
 
 Configuration and usage of django-css is almost identical to django-compress. See the [http://code.google.com/p/django-compress/wiki/Configuration Configuration] and [http://code.google.com/p/django-compress/wiki/Usage Usage] pages at django-compress for information on configuring and usage. 
 
-Instead of just specifying css files though, you can use HSS or Sass files. For example:
+CSS files will still be treated as CSS files, but you can also use HSS, Sass, or whatever other compiler format you want. For example, to include the HSS file format.hss:
 
 {{{
 COMPRESS_CSS = {
