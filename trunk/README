@@ -1,0 +1,7 @@
+django-css provides an easy way to use CSS compilers in Django projects. CSS compilers extend CSS syntax to include more powerful features such as variables and nested blocks. 
+
+CSS files are re-compiled only when they are changed, so you can still serve them as static content.
+
+django-css is a fork of django-compress R98 which automates the compression, combination, and versioning of your CSS and Javascript files.
+
+django-css is available at http://code.google.com/p/django-css/
