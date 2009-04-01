@@ -1,0 +1,25 @@
+#summary Using django-css
+
+= Configuration =
+
+See http://code.google.com/p/django-compress/wiki/Configuration for information on configuring django-css. Instead of just specifying css files though, you can use HSS or Sass files. For example:
+
+{{{
+COMPRESS_CSS = {
+    'css': {
+	'source_filenames': ('reset.css','format.hss'),
+	'output_filename': 'all_compressed.r?.css'
+    }
+}
+}}}
+
+django-css will select which CSS compiler to use based off a file's extension. Adding the following to your settings.py,
+
+{{{
+COMPILER_FORMATS = {
+    '.hss' : PATH_TO_HSS,
+    '.sass' : PATH_TO_SASS
+}
+}}}
+
+will use HSS to compile `*`.hss files, and Sass to compile `*`.sass files. Other compilers will use different extensions, just add the extension the compiler uses with the path to the compiler like in the above example.
