@@ -1,0 +1,26 @@
+#summary Installation instructions for django-css
+
+= Installing django-css =
+
+  # Checkout from svn: {{{ svn co http://django-css.googlecode.com/svn/trunk/ django-css }}}
+  # Install with setup.py: {{{ python setup.py install }}} or manually add the django-css directory to your PYTHONPATH 
+  # Add 'django-css' to your INSTALLED_APPS 
+
+django-css does not create any models, so you don't need to sync the database.
+
+= Installing the CSS compiler =
+You will need to choose a CSS compiler to use. Some popular ones are:
+  * HSS - http://ncannasse.fr/projects/hss
+  * Saas - http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html
+
+= Installing a CSS and/or JS compressor =
+
+You will need to install a CSS and/or Javascript compressor. The current options are:
+  * CSSTidy - Compresses CSS - http://csstidy.sourceforge.net/
+  * YUICompressor - Compresses CSS and JS - http://www.julienlecomte.net/yuicompressor/
+  * JSMin -  Compresses JS - Included with installation
+
+By default django-css and django-compress use CSSTidy to compress CSS. If you do not install CSSTidy, make sure to disable the filter in your settings by setting COMPRESS_CSS_FILTERS = None.
+
+See the Usage page for setting up and using django-css.
+   
