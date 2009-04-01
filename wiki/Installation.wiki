@@ -22,5 +22,5 @@ You will need to install a CSS and/or Javascript compressor. The current options
 
 By default django-css and django-compress use CSSTidy to compress CSS. If you do not install CSSTidy, make sure to disable the filter in your settings by setting COMPRESS_CSS_FILTERS = None.
 
-See the Usage page for setting up and using django-css.
+See the [http://code.google.com/p/django-css/wiki/Usage Usage] page for setting up and using django-css.
    
