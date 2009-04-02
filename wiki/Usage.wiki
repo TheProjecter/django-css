@@ -4,38 +4,36 @@
 
 Configuration and usage of django-css is almost identical to django-compress. See the [http://code.google.com/p/django-compress/wiki/Configuration Configuration] and [http://code.google.com/p/django-compress/wiki/Usage Usage] pages at django-compress for information on configuring and usage. 
 
-CSS files will still be treated as CSS files, but you can also use HSS, Sass, or whatever other compiler format you want. For example, to include the HSS file format.hss:
+CSS files will still be treated as CSS files, but you can also use HSS, Sass, or whatever other compiler format you want. For example, to include the HSS file base.hss:
 
 {{{
 COMPRESS_CSS = {
     'css': {
-	'source_filenames': ('reset.css','format.hss'),
+	'source_filenames': ('reset.css','base.hss','css/ie_specific.hss'),
 	'output_filename': 'all_compressed.r?.css'
     }
 }
 }}}
+Remember that these files are assumed to be relative to MEDIA_ROOT.
+
 
 django-css will select which CSS compiler to use based off a file's extension. Adding the following to your settings.py,
 
 {{{
 COMPILER_FORMATS = {
-    '.hss' : PATH_TO_HSS,
-    '.sass' : PATH_TO_SASS
-}
+        '.sass': {
+            'binary_path':'sass',
+            'arguments': 'SOURCE_FILENAME.sass SOURCE_FILENAME.css' 
+        },
+        '.hss': {
+            'binary_path':'/home/dziegler/hss',
+            'arguments':'SOURCE_FILENAME.hss'
+        }
+    }
 }}}
 
-will use HSS to compile `*`.hss files, and Sass to compile `*`.sass files. Other compilers will use different extensions, just add the extension the compiler uses with the path to the compiler like in the above example.
+will use Sass to compile {{{*.sass}}} files, and HSS to compile {{{*.hss}}} files. 
 
-= Specifying Options =
-Most CSS compilers have optional arguments. Since django-css just does a command line call to the CSS compiler, you can just add the options to the path string. For example:
-{{{
-COMPILER_FORMATS = {
-    '.hss' : '/home/dziegler/project/hss',
-}
-}}}
-would be a normal call to the HSS compiler. HSS has the optional argument {{{-output <dir>}}} which lets you output the corresponding CSS file to a different directory. If I had the file format.hss and wanted to output the CSS file to project/output/format.css then I would do:
-{{{
-COMPILER_FORMATS = {
-    '.hss' : '/home/dziegler/project/hss -output project/output/',
-}
-}}}
+{{{binary_path}}} is the path to the CSS compiler. In the above example, sass is installed in my path, and hss is located at /home/dziegler/hss.
+
+{{{arguments}}} are arguments you would call in the command line to the compiler. Prior to compilation, {{{SOURCE_FILENAME}}} will be replaced with the name of your file to be compiled, for example {{{reset}}}, {{{base}}}, or {{{css/ie_specific}}}. 
