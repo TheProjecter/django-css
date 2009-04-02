@@ -154,9 +154,11 @@ def compile_css(css,update):
         
         # Compile CSS files
         isValid = False
-        for format,binary in django_settings.COMPILER_FORMATS.iteritems():
+        for format,commands in django_settings.COMPILER_FORMATS.iteritems():
             if source_file.endswith(format):
-                os.system(binary + ' ' + os.path.join(django_settings.MEDIA_ROOT,source_file))
+                basename = os.path.splitext(source_file)[0]
+                arguments = commands['arguments'].replace('SOURCE_FILENAME',os.path.join(django_settings.MEDIA_ROOT,basename))
+                os.system(commands['binary_path'] + ' ' + arguments)
                 source_file = source_file.replace(format,".css")
                 new_sources.append(source_file)
                 isValid = True
