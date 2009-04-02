@@ -11,7 +11,8 @@ django-css does not create any models, so you don't need to sync the database.
 = Installing the CSS compiler =
 You will need to choose a CSS compiler to use. Some popular ones are:
   * HSS - http://ncannasse.fr/projects/hss
-  * Saas - http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html
+  * Sass - http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html
+  * CleverCSS - http://sandbox.pocoo.org/clevercss/
 
 = Installing a CSS and/or JS compressor =
 
