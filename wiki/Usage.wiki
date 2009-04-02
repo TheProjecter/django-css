@@ -36,4 +36,4 @@ will use Sass to compile {{{*.sass}}} files, and HSS to compile {{{*.hss}}} file
 
 {{{binary_path}}} is the path to the CSS compiler. In the above example, sass is installed in my path, and hss is located at /home/dziegler/hss.
 
-{{{arguments}}} are arguments you would call in the command line to the compiler. Prior to compilation, {{{SOURCE_FILENAME}}} will be replaced with the name of your file to be compiled, for example {{{reset}}}, {{{base}}}, or {{{css/ie_specific}}}. 
+{{{arguments}}} are arguments you would call in the command line to the compiler. The order and format of these will depend on the CSS compiler you use. Prior to compilation, {{{SOURCE_FILENAME}}} will be replaced with the name of your file to be compiled, for example {{{reset}}}, {{{base}}}, or {{{css/ie_specific}}}. 
