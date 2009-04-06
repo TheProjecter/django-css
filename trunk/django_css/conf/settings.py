@@ -6,10 +6,10 @@ COMPRESS_AUTO = getattr(settings, 'COMPRESS_AUTO', True)
 COMPRESS_VERSION = getattr(settings, 'COMPRESS_VERSION', False)
 COMPRESS_VERSION_PLACEHOLDER = getattr(settings, 'COMPRESS_VERSION_PLACEHOLDER', '?')
 COMPRESS_VERSION_DEFAULT = getattr(settings, 'COMPRESS_VERSION_DEFAULT', '0')
-COMPRESS_VERSIONING = getattr(settings, 'COMPRESS_VERSIONING', 'compress.versioning.mtime.MTimeVersioning')
+COMPRESS_VERSIONING = getattr(settings, 'COMPRESS_VERSIONING', 'django_css.versioning.mtime.MTimeVersioning')
 
-COMPRESS_CSS_FILTERS = getattr(settings, 'COMPRESS_CSS_FILTERS', ['compress.filters.csstidy.CSSTidyFilter'])
-COMPRESS_JS_FILTERS = getattr(settings, 'COMPRESS_JS_FILTERS', ['compress.filters.jsmin.JSMinFilter'])
+COMPRESS_CSS_FILTERS = getattr(settings, 'COMPRESS_CSS_FILTERS', ['django_css.filters.csstidy.CSSTidyFilter'])
+COMPRESS_JS_FILTERS = getattr(settings, 'COMPRESS_JS_FILTERS', ['django_css.filters.jsmin.JSMinFilter'])
 COMPRESS_CSS = getattr(settings, 'COMPRESS_CSS', {})
 COMPRESS_JS = getattr(settings, 'COMPRESS_JS', {})
 
