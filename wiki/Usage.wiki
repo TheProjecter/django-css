@@ -39,3 +39,12 @@ will use Sass to compile {{{*.sass}}} files, and HSS to compile {{{*.hss}}} file
 {{{arguments}}} are arguments you would call in the command line to the compiler. The order and format of these will depend on the CSS compiler you use. Prior to compilation, {{{SOURCE_FILENAME}}} will be replaced with the name of your file to be compiled, for example {{{reset}}}, {{{base}}}, or {{{css/ie_specific}}}. 
 
 If this seems a little hacky, it's because it is. django-css was written this way to make it easy to use whatever CSS compiler you want with as little setup as possible.
+
+= Deployment =
+In a production environment you probably don't want your source files to be evaluated and
+regenerated (if needed) on every request. Adding the following to settings.py will cause django-css to assume that all CSS and JS files have been compiled and compressed.
+{{{
+COMPRESS_AUTO = False
+COMPRESS_VERSION = True
+}}}
+If the above settings are not included in settings.py, django-css will automatically recompile and regenerate the CSS/JS files on every request, which is obviously not recommended during deployment.
