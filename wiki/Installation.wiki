@@ -1,4 +1,5 @@
 #summary Installation instructions for django-css
+#labels Featured,Phase-Deploy
 
 = Installing django-css =
 
