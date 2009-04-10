@@ -1,4 +1,5 @@
 #summary Using django-css
+#labels Featured,Phase-Deploy
 
 = Configuration and Usage=
 
