@@ -13,7 +13,7 @@ django-css does not create any models, so you don't need to sync the database.
 You will need to choose a CSS compiler to use. Some popular ones are:
   * HSS - http://ncannasse.fr/projects/hss
   * Sass - http://haml.hamptoncatlin.com/docs/rdoc/classes/Sass.html
-  * CleverCSS - ~~http://sandbox.pocoo.org/clevercss ~~.  A small bug has been found in CleverCSS that will cause it to fail with django-css. Use the patched version here: http://django-css.googlecode.com/files/CleverCSS-0.1.2.zip
+  * CleverCSS - ~~http://sandbox.pocoo.org/clevercss ~~.  A small bug has been found in CleverCSS that will cause it to fail with django-css. Use the most recent patched version found here: http://code.google.com/p/django-css/downloads/list
 
 I wrote a blog post [http://blog.davidziegler.net/post/92203003/css-compilers-rock here] discussing CSS compilers. Personally, I prefer CleverCSS because I like its features and pythonic syntax.
 
