@@ -1,5 +1,7 @@
 #summary Using django-css
 #labels Featured,Phase-Deploy
+=This information is for Version 1 and is deprecated.=
+===New users are encouraged to use Version 2  found on github: http://github.com/dziegler/django-css/tree/master===
 
 = Configuration and Usage=
 
